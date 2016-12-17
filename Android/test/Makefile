@@ -9,8 +9,7 @@ CLASSPATH = build
 MAIN_CLASS = Main 
 
 #Flags  
-DX_FLAGS = --dex --output $(BUILD_DIR)/classes.dex 
-
+DX_FLAGS = --dex --output $(BUILD_DIR)/classes.dex build/*.class
 #Compiler and others
 ECJ = ecj
 DX = dx 
