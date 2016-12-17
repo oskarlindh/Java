@@ -2,14 +2,13 @@
 SRC = src
 BUILD_DIR = build 
 
-#Add JAR files for testing to classpath
 CLASSPATH = build
 
 #Classes for running
 MAIN_CLASS = Main 
 
 #Flags  
-DX_FLAGS = --dex --output $(BUILD_DIR)/classes.dex build/*.class
+DX_FLAGS = --no-strict --dex --output $(BUILD_DIR)/classes.dex build/*.class
 #Compiler and others
 ECJ = ecj
 DX = dx 
