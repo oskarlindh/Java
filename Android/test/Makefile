@@ -1,14 +1,15 @@
 #Directories
 SRC = src
 BUILD_DIR = build 
+BIN = bin
 
-CLASSPATH = build
+CLASSPATH = build:$(BIN)/classes.dex
 
 #Classes for running
-MAIN_CLASS = Main 
+MAIN_CLASS = HelloWorld 
 
 #Flags  
-DX_FLAGS = --no-strict --dex --output $(BUILD_DIR)/classes.dex build/*.class
+DX_FLAGS = --no-strict --dex --output $(BIN)/classes.dex build/*.class
 #Compiler and others
 ECJ = ecj
 DX = dx 
@@ -22,10 +23,10 @@ build: clean-build
 	$(DX) $(DX_FLAGS)   	
 
 run:
-	$(DALVIKVM) -cp $(CLASSPATH)/classes.dex  	
+	$(DALVIKVM) -cp $(CLASSPATH) $(MAIN_CLASS)	
 
 clean :
-	rm -rf $(BUILD_DIR) ./*.txt $(DOCDIR)
+	rm -rf $(BUILD_DIR)  $(DOCDIR) $(BIN)/*
 
 clean-build:
 	rm -rf $(BUILD_DIR)
