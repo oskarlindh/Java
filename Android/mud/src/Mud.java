@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.lang.Exception;
 import java.util.Random;
 import java.util.InputMismatchException;
-
 /**
  * Mud is class that handles the player game interaction
  */
